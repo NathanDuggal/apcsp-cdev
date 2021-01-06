@@ -19,6 +19,8 @@ int main(int argc, char* argv[])
 
 
   // add code below to complete 2.4 for any value of div
+  printf("looking for numbers divisible by 3\n");
+
   for (int i = 0; i < 100; i++) {
     if (i%div == 0) {
       printf("%d is divisible by %d\n", i, div);
