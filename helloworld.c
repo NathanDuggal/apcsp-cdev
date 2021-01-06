@@ -3,7 +3,7 @@
 int main()
 {
 	printf("Hello World\n");
-	printf("CCA is the best");
-	printf("APCSP");
+	printf("CCA is the best\n");
+	printf("APCSP\n");
 	return 0;
 }
