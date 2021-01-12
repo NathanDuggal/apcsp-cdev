@@ -9,7 +9,7 @@ int main(){
   }
   str1[26] = '\0';
   // string 2
-  char str2[27] = "abcdefghijklmnopqrstuvwxyz\0";
+  char str2[27] = "abcdefghijklmnopqrstuvwxyz";
 
   // string compare
   if(strcmp(str1, str2) == 0)
@@ -29,7 +29,7 @@ int main(){
     printf("The strings are different\n");
   
   // string concatination
-  char str3[52];
+  char str3[53];
   strcpy(str3, str1);
   strcat(str3, str2);
   // printing strings
