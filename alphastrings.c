@@ -3,7 +3,7 @@
 
 int main(){
   // string 1
-  char str1[26];
+  char str1[27];
   for(int i = 0; i < 26; i++){
     str1[i]='a'+i;
   }
@@ -29,14 +29,11 @@ int main(){
     printf("The strings are different\n");
   
   // string concatination
-  char str3[26];
-  char strtemp[26];
+  char str3[52];
   strcpy(str3, str1);
-  // for some reason str2 breaks after the concat so I had to make a temp
-  strcpy(strtemp, str2);
-  strcat(str3, str2); 
+  strcat(str3, str2);
   // printing strings
   printf("str1: %s \n",str1);
-  printf("str2: %s \n",strtemp);
+  printf("str2: %s \n",str2);
   printf("str3: %s \n",str3);
 }
