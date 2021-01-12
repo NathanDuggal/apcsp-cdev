@@ -50,8 +50,6 @@ void getVals(){
 
 int main(int argc, char* argv[]) 
 {
-  // the two variables which control the number of times areaOfCircle is called
-
   if(argc == 3){
     sscanf(argv[1], "%f", &start);
     sscanf(argv[2], "%f", &end);
