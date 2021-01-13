@@ -21,7 +21,7 @@ void printStudent(struct Student* student)
 void printAllStudents(struct Student students[], int num)
 {
   for(int i = 0; i < num; i++){
-    printf("\n----- student %d -----               \n", i);
+    printf("\n----- student %d -----\n", i);
     printStudent(&(students[i]));
   }
 }
@@ -56,8 +56,9 @@ int main()
       // enter a new student
 
       printf("\nFirst name: ");
-      fgets(input, 256, stdin);
-      strcpy(students[numStudents].firstName, input);
+      /*fgets(input, 256, stdin);
+      strcpy(students[numStudents].firstName, input);*/
+      scanf("%d", students[numStudents].firstName);
 
       printf("Last name: ");
       fgets(input, 256, stdin);
@@ -80,6 +81,5 @@ int main()
       numStudents++;
     }
   }
-  
   printf("\nGoodbye!\n");
 }
