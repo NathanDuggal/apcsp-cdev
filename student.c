@@ -14,6 +14,7 @@ struct Student {
 
 void printStudent(struct Student* student)
 {
+  char name[41];
   printf("  Student: %s %s\n    Age: %d\n    ID: %d\n\n", student->firstName, student->lastName, student->age, student->id);
 }
 
@@ -56,13 +57,12 @@ int main()
       // enter a new student
 
       printf("\nFirst name: ");
-      /*fgets(input, 256, stdin);
-      strcpy(students[numStudents].firstName, input);*/
-      scanf("%d", students[numStudents].firstName);
+      fgets(input, 256, stdin);
+      sscanf(input, "%s", students[numStudents].firstName);
 
       printf("Last name: ");
       fgets(input, 256, stdin);
-      strcpy(students[numStudents].lastName, input);
+      sscanf(input, "%s", students[numStudents].lastName);
 
       while(1){
         printf("Age: ");
