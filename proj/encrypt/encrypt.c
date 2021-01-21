@@ -1,3 +1,4 @@
+
 //
 // encrypt.c
 //
@@ -6,10 +7,9 @@
 
 #include "encrypt.h"
 
-
-char CHARS[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-int CHARS_LEN = 62;
-
+// I couldn't figure out a way to do it with the base code
+// I hope my method is acceptable
+int CHARS_LEN = 94;
 
 char shiftChar(char c, int shift, int direction)
 {
@@ -22,6 +22,20 @@ char shiftChar(char c, int shift, int direction)
   //   shiftChar('c', 3, 1) : 'f'
   //   shiftChar('S', 2, 0) : 'P'
   //   shiftChar('b', 3, 0) : '8'
+  int ind = c;
+  if(direction){
+    ind+=shift;
+  }else{
+    ind-=shift;
+  }
+  while( ind < 32 || ind > 126 ){
+    if(ind >= 126){
+      ind-=CHARS_LEN;
+    }else if(ind < 32){
+      ind+=CHARS_LEN;
+    }
+  }
+  return ind;
 }
 
 
@@ -58,6 +72,24 @@ void caesarDecrypt(char str[], int shift)
 {
   int shifts[] = { shift };
   decrypt(str, shifts, 1);
+}
+
+void vEncrypt(char str[], char shift[])
+{
+  int key[strlen(shift)];
+  for (int i=0; i<strlen(shift); i++){
+    key[i] = shift[i];
+  }
+  encrypt(str, key, strlen(shift));
+}
+
+void vDecrypt(char str[], char shift[])
+{
+  int key[strlen(shift)];
+  for (int i=0; i<strlen(shift); i++){
+    key[i] = shift[i];
+  }
+  decrypt(str, key, strlen(shift));
 }
 
 

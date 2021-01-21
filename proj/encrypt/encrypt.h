@@ -2,7 +2,6 @@
 // encrypt.h
 //
 
-
 // general purpose substitution cypher
 //   str - the input/output string - each char is replaced
 //   shifts - an array of shifts applied to str
@@ -15,5 +14,8 @@ void decrypt(char str[], int shifts[], int shiftslen);
 void caesarEncrypt(char str[], int shift);
 void caesarDecrypt(char str[], int shift);
 
+// vigenere cipher (I hope) - calls encrypt/decrypt with a shift key
+void vEncrypt(char str[], char shift[]);
+void vDecrypt(char str[], char shift[]);
 
 		     

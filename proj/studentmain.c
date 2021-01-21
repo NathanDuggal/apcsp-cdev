@@ -28,7 +28,7 @@ int main()
   char lname[BUFFSIZE];
 
   // key to encrypt/decrypt
-  int key = 0;
+  char key[BUFFSIZE];
 
   while (1)
   {
@@ -59,11 +59,7 @@ int main()
     {
       printf("\nEnter an encrypt/decrypt key: ");
       fgets(inputBuff, BUFFSIZE, stdin);
-      int x;
-      if (sscanf(inputBuff, "%d", &x) == 1) 
-        key = x;
-      else
-        printf("enter a positive shift key\n");
+      sscanf(inputBuff, "%s", key);
     }
     else if (c == 'a')
     {
