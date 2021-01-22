@@ -11,6 +11,7 @@ void testEncrypt(int enc, char in[], int shifts[], int slen, char* out)
     encrypt(in, shifts, slen);
   else
     decrypt(in, shifts, slen);
+
   
   if (strcmp(in, out) != 0)
     printf("FAIL %s : %s\n", in, out);
@@ -31,7 +32,7 @@ int main()
   testEncrypt(0, inpStr, shifts, 1, "hello");
   
   strcpy(inpStr, "z9Z");
-  testEncrypt(1, inpStr, shifts, 1, "Cc2");
+  testEncrypt(1, inpStr, shifts, 1, "}<]");
   testEncrypt(0, inpStr, shifts, 1, "z9Z");
 
   strcpy(inpStr, "hello");
